@@ -44,7 +44,8 @@ defmodule ModuleMocker.Mixfile do
     [
       files: ["lib", "priv", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Rohan Pujari"],
-      licenses: ["MIT"]
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/rohanpujaris/module_mocker"}
     ]
   end
 end

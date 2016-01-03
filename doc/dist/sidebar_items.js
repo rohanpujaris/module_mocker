@@ -1,1 +1,0 @@
-sidebarNodes={"exceptions":[],"extras":[{"id":"api-reference","title":"API Reference","headers":[]}],"modules":[{"id":"ModuleMocker","title":"ModuleMocker","macros":[{"id":"mock_for_test/2","anchor":"mock_for_test/2"}]}],"protocols":[]}
