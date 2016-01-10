@@ -51,13 +51,14 @@ defmodule ModuleMocker do
   """
   defmacro mock_for_test({:__aliases__, _, module_path}, module_attribute \\ nil) do
     module_attribute = module_attribute || get_module_attribute_name(module_path)
-    module = if Mix.env == :test do
-      mock_module_name(module_path)
-    else
-      Module.concat module_path
-    end
+    mock_module_name = mock_module_name(module_path)
     quote do
-      Module.put_attribute __MODULE__, unquote(module_attribute), unquote(module)
+      module = if Mix.env == :test do
+        unquote(mock_module_name)
+      else
+        Module.concat unquote(module_path)
+      end
+      Module.put_attribute __MODULE__, unquote(module_attribute), module
     end
   end
 
